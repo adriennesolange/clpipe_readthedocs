@@ -25,11 +25,14 @@ Accessing the clpipe module
 
 Longleaf modules are a series of software installations and applications that allow users to access programming tools 
 or alternate versions of standard packages. If you are a Longleaf user and a member of the rc_hng_psx group, 
-clpipe has already been installed for you via the module system. To check if you are a member of the rc_hng_psx group
+clpipe has already been installed for you via the module system.
 
-clpipe is not currently available as part of Longleaf's default module collection.
-Instead, it is provided through the UNC Human Neuroimaging Group's module directory, 
+clpipe is not currently available as part of Longleaf's default module collection. 
+Instead, it is provided through the UNC Human Neuroimaging Group (HNG)'s module directory, 
 which you must setup manually.
+
+To check if you are a member of the UNC HNG group... rc_hng_psx group
+
 
 
 Second, make the HNG modules available:
@@ -49,6 +52,12 @@ You can then use the following to access the latest version of clpipe at any tim
 .. code-block:: console
 
     module add clpipe
+
+To view what version of clpipe is currently loaded:
+
+.. code-block:: console
+
+    clpipe -v
 
 Additional module commands
 #################
