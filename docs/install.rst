@@ -18,20 +18,18 @@ available to researchers across the campus free of charge. All UNC-CH clpipe use
 need a Longleaf account. To request a Longleaf account, follow these `instructions <https://help.rc.unc.edu/request-a-cluster-account/>`_.
 Users can access the Longleaf cluster by using either the web-portal, `OnDemand <https://help.rc.unc.edu/ondemand>`_, 
 or on the terminal of your local computer. For more instructions on how to use Longleaf see the UNC ITS Research Computing's
-Longleaf `guide <https://drive.google.com/file/d/1YCV5jONUYGZRxSOnaXGzA4-oPP61W2Sy/view`_.
+Longleaf `guide <https://drive.google.com/file/d/1YCV5jONUYGZRxSOnaXGzA4-oPP61W2Sy/view>`_.
 
 Accessing the clpipe module
 -----------------------------
 
-If you are a Longleaf user and a member of the rc_hng_psx group,
-clpipe has already been installed for you via the module system. 
-To check if you are a member of the rc_hng_psx group
+Longleaf modules are a series of software installations and applications that allow users to access programming tools 
+or alternate versions of standard packages. If you are a Longleaf user and a member of the rc_hng_psx group, 
+clpipe has already been installed for you via the module system. To check if you are a member of the rc_hng_psx group
 
 clpipe is not currently available as part of Longleaf's default module collection.
 Instead, it is provided through the UNC Human Neuroimaging Group's module directory, 
 which you must setup manually.
-
-First, make sure you are a member of the rc_hng_psx group:
 
 
 Second, make the HNG modules available:
@@ -51,6 +49,7 @@ You can then use the following to access the latest version of clpipe at any tim
 .. code-block:: console
 
     module add clpipe
+
 Additional module commands
 #################
 
@@ -79,11 +78,6 @@ View all options for a give module:
 .. code-block:: console
 
     module help <modulename>
-
-
-
-
-
 
 
 Singularity images
