@@ -1,69 +1,15 @@
 ===================
 Overview
 ===================
-
 *****************
-Configuration Files
+BIDS Format
 *****************
 
-clpipe is driven by configuration files, and most commands in clpipe require a configuration file path
-via their '-config_file' option. These configuration files are JSONs that contain 
-all aspects of the preprocessing and postprocessing streams that 
-you want applied to your dataset. 
-clpipe provides you with a default configuration file after using the `project_setup`
-command. To create addition configuration files for your dataset, use the following command:
-
-.. click:: clpipe.cli:get_config_file
-	:prog: clpipe config get
-
-This command will create a default configuration file with whatever name you specified. 
-The top of the default configuration file looks like this:
-
-.. code-block:: json
-
-    {
-        "project_title": "test_project",
-        "contributors": "SET CONTRIBUTORS",
-        "project_directory": "/nas/longleaf/home/user/clpipe",
-        "email_address": "SET EMAIL ADDRESS",
-        "source": {
-            "source_url": "fw://",
-            "dropoff_directory": "",
-            "temp_directory": "",
-            "commandline_opts": "-y",
-            "time_usage": "1:0:0",
-            "mem_usage": "10G",
-            "core_usage": "2"
-        },
-        "convert2bids": {
-            "dicom_directory": "/nas/longleaf/home/user/clpipe/data_DICOMs",
-            "bids_directory": "/nas/longleaf/home/user/clpipe/data_BIDS",
-            "conversion_config": "/nas/longleaf/home/user/clpipe/conversion_config.json",
-            "dicom_format_string": "",
-            "time_usage": "1:0:0",
-            "mem_usage": "5000",
-            "core_usage": "2",
-            "log_directory": "/nas/longleaf/home/user/clpipe/logs/DCM2BIDS_logs"
-        },
-        ...
-    }
-
-The configuration file consists of some project-level metadata, such as "ProjectTitle",
-and a set of Option blocks that contain their own sub-settings. Each Option block
-corresponds to a clpipe command, and controls the input parameters for that step.
-For example, "DICOMtoBIDSOptions" corresponds to the convert2bids command. You can
-find explanations for each specific Option block on the documenation page for its
-corresponding command.
-
-All of these fields have what the designers of clpipe consider to 
-be reasonable defaults for processing. 
-Additionally, users at UNC-CH on the Longleaf cluster with access to the 
-HNG group should be able to use the default options with no change. 
-Other users will have to modify several fields. 
-
-Described here are the project-level meta fields of the configuration file:
-
-.. autoclass:: clpipe.config.options.ProjectOptions
+Brain Imaging Data Structure (BIDS) is a framework for organizing data that standardizes file 
+organization and dataset description between different projects. clpipe uses `fMRIprep <https://fmriprep.readthedocs.io/en/stable/>` 
+and other other applications that require input data to be in BIDS format. The first steps in the clpipe workflow are to convert 
+the directories and configuration files for a given neuroimaging project to BIDS format. For more information on BIDS,
+you can browse the `BIDS workbook <https://bids-standard.github.io/bids-starter-kit/>` 
 
 *****************
 The Command Line Interface
@@ -166,3 +112,66 @@ Job Submission
 *****************
 
 .. autoclass:: clpipe.config.options.ParallelManagerConfig
+
+*****************
+Configuration Files
+*****************
+
+clpipe is driven by configuration files, and most commands in clpipe require a configuration file path
+via their '-config_file' option. These configuration files are JSONs that contain 
+all aspects of the preprocessing and postprocessing streams that 
+you want applied to your dataset. 
+clpipe provides you with a default configuration file after using the `project_setup`
+command. To create addition configuration files for your dataset, use the following command:
+
+.. click:: clpipe.cli:get_config_file
+	:prog: clpipe config get
+
+This command will create a default configuration file with whatever name you specified. 
+The top of the default configuration file looks like this:
+
+.. code-block:: json
+
+    {
+        "project_title": "test_project",
+        "contributors": "SET CONTRIBUTORS",
+        "project_directory": "/nas/longleaf/home/user/clpipe",
+        "email_address": "SET EMAIL ADDRESS",
+        "source": {
+            "source_url": "fw://",
+            "dropoff_directory": "",
+            "temp_directory": "",
+            "commandline_opts": "-y",
+            "time_usage": "1:0:0",
+            "mem_usage": "10G",
+            "core_usage": "2"
+        },
+        "convert2bids": {
+            "dicom_directory": "/nas/longleaf/home/user/clpipe/data_DICOMs",
+            "bids_directory": "/nas/longleaf/home/user/clpipe/data_BIDS",
+            "conversion_config": "/nas/longleaf/home/user/clpipe/conversion_config.json",
+            "dicom_format_string": "",
+            "time_usage": "1:0:0",
+            "mem_usage": "5000",
+            "core_usage": "2",
+            "log_directory": "/nas/longleaf/home/user/clpipe/logs/DCM2BIDS_logs"
+        },
+        ...
+    }
+
+The configuration file consists of some project-level metadata, such as "ProjectTitle",
+and a set of Option blocks that contain their own sub-settings. Each Option block
+corresponds to a clpipe command, and controls the input parameters for that step.
+For example, "DICOMtoBIDSOptions" corresponds to the convert2bids command. You can
+find explanations for each specific Option block on the documenation page for its
+corresponding command.
+
+All of these fields have what the designers of clpipe consider to 
+be reasonable defaults for processing. 
+Additionally, users at UNC-CH on the Longleaf cluster with access to the 
+HNG group should be able to use the default options with no change. 
+Other users will have to modify several fields. 
+
+Described here are the project-level meta fields of the configuration file:
+
+.. autoclass:: clpipe.config.options.ProjectOptions
