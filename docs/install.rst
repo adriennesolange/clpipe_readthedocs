@@ -2,8 +2,99 @@
 Installation
 ============
 
-    Please note - if you're a UNC-CH user, clpipe is already installed and accessible 
-    with the module system - please see the section below, "For UNC-CH Users"
+    Please note - if you are a UNC-CH user, clpipe is already installed and accessible 
+    with the module system. If you are not a UNC-CH user, please start at the section, 
+    "Python Environment Setup"
+
+-----------------------
+For UNC-CH Users
+-----------------------
+
+Getting started on Longleaf
+---------------------------
+
+clpipe uses `Longleaf <https://help.rc.unc.edu/longleaf-cluster>`_, a Linux-based HPC
+available to researchers across the campus free of charge. All UNC-CH clpipe users will
+need a Longleaf account. To request a Longleaf account, follow these `instructions <https://help.rc.unc.edu/request-a-cluster-account/>`_.
+Users can access the Longleaf cluster by using either the web-portal, `OnDemand <https://help.rc.unc.edu/ondemand>`_, 
+or on the terminal of your local computer. For more instructions on how to use Longleaf see the UNC ITS Research Computing's
+Longleaf `guide <https://drive.google.com/file/d/1YCV5jONUYGZRxSOnaXGzA4-oPP61W2Sy/view>`_.
+
+Accessing the clpipe module
+-----------------------------
+
+Longleaf modules are a series of software installations and applications that allow users to access programming tools 
+or alternate versions of standard packages. If you are a Longleaf user and a member of the rc_hng_psx group, 
+clpipe has already been installed for you via the module system.
+
+clpipe is not currently available as part of Longleaf's default module collection. 
+Instead, it is provided through the UNC Human Neuroimaging Group (HNG)'s module directory, 
+which you must setup manually.
+
+To check if you are a member of the UNC HNG group... rc_hng_psx group
+
+
+
+Second, make the HNG modules available:
+
+.. code-block:: console
+
+    module use /proj/hng/software/modules
+
+Now save this module source to your default collection:
+
+.. code-block:: console
+
+    module save
+
+You can then use the following to access the latest version of clpipe at any time:
+
+.. code-block:: console
+
+    module add clpipe
+
+To view what version of clpipe is currently loaded:
+
+.. code-block:: console
+
+    clpipe -v
+
+Additional module commands
+#################
+
+Other basic module commands are provide below.
+
+List all modules on Lonfleaf: 
+
+.. code-block:: console
+
+    module avail
+
+View all your currently loaded modules: 
+
+.. code-block:: console
+
+    module list <modulename>
+
+Remove or unload a loaded module: 
+
+.. code-block:: console
+
+    module rm <modulename>
+
+View all options for a give module: 
+
+.. code-block:: console
+
+    module help <modulename>
+
+
+Singularity images
+#################
+
+Members of the rc_hng_psx group already have access to the latest singularity images for both `fMRIPrep` 
+and bids validators at ``/proj/hng/singularity_imgs``, 
+so there is no need to construct your own, unless you want a older version.
 
 -----------------------
 Python Environment Setup
@@ -64,39 +155,6 @@ by the clpipe module):
 - FSL >= v6.0.0
 - AFNI >= v20.0.00
 - R >= v4.0.0
-
------------------------
-For UNC-CH Users
------------------------
-
-If you are a Longleaf user and a member of the rc_hng_psx group,
-clpipe has already been installed for you via the module system. 
-
-clpipe is not currently available as part of Longleaf's default module collection.
-Instead, it is provided through the HNG's module directory, which you must
-setup manually.
-
-First, make the HNG modules available:
-
-.. code-block:: console
-
-    module use /proj/hng/software/modules
-
-Now save this module source to your default collection:
-
-.. code-block:: console
-
-    module save
-
-You can then use the following to access the latest version of clpipe at any time:
-
-.. code-block:: console
-
-    module add clpipe
-
-You also already have access to the latest singularity images for both fmriprep 
-and the bids validator at ``/proj/hng/singularity_imgs``, 
-so there is no need to construct your own, unless you want a older version.
 
 ---------------
 Batch Languages
