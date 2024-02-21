@@ -16,13 +16,16 @@ Getting started on Longleaf
 clpipe uses `Longleaf <https://help.rc.unc.edu/longleaf-cluster>`_, a Linux-based HPC
 available to researchers across the campus free of charge. All UNC-CH clpipe users will
 need a Longleaf account. To request a Longleaf account, follow these `instructions <https://help.rc.unc.edu/request-a-cluster-account/>`_.
-Users can access the Longleaf cluster by using either the web-portal, `OnDemand <https://help.rc.unc.edu/ondemand>
+Users can access the Longleaf cluster by using either the web-portal, `OnDemand <https://help.rc.unc.edu/ondemand>`_, 
+or on the terminal of your local computer. For more instructions on how to use Longleaf see the UNC ITS Research Computing's
+Longleaf `guide <https://drive.google.com/file/d/1YCV5jONUYGZRxSOnaXGzA4-oPP61W2Sy/view`_.
 
 Accessing the clpipe module
 -----------------------------
 
 If you are a Longleaf user and a member of the rc_hng_psx group,
 clpipe has already been installed for you via the module system. 
+To check if you are a member of the rc_hng_psx group
 
 clpipe is not currently available as part of Longleaf's default module collection.
 Instead, it is provided through the UNC Human Neuroimaging Group's module directory, 
