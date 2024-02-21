@@ -2,8 +2,42 @@
 Installation
 ============
 
-    Please note - if you're a UNC-CH user, clpipe is already installed and accessible 
-    with the module system - please see the section below, "For UNC-CH Users"
+    Please note - if you are a UNC-CH user, clpipe is already installed and accessible 
+    with the module system. If you are not a UNC-CH user, please start at the section, 
+    "Python Environment Setup"
+
+-----------------------
+For UNC-CH Users
+-----------------------
+
+If you are a Longleaf user and a member of the rc_hng_psx group,
+clpipe has already been installed for you via the module system. 
+
+clpipe is not currently available as part of Longleaf's default module collection.
+Instead, it is provided through the HNG's module directory, which you must
+setup manually.
+
+First, make the HNG modules available:
+
+.. code-block:: console
+
+    module use /proj/hng/software/modules
+
+Now save this module source to your default collection:
+
+.. code-block:: console
+
+    module save
+
+You can then use the following to access the latest version of clpipe at any time:
+
+.. code-block:: console
+
+    module add clpipe
+
+You also already have access to the latest singularity images for both fmriprep 
+and the bids validator at ``/proj/hng/singularity_imgs``, 
+so there is no need to construct your own, unless you want a older version.
 
 -----------------------
 Python Environment Setup
