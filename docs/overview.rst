@@ -6,10 +6,10 @@ BIDS Format
 *****************
 
 Brain Imaging Data Structure (BIDS) is a framework for organizing data that standardizes file 
-organization and dataset description between different projects. clpipe uses `fMRIprep <https://fmriprep.readthedocs.io/en/stable/>` 
-and other other applications that require input data to be in BIDS format. The first steps in the clpipe workflow are to convert 
-the directories and configuration files for a given neuroimaging project to BIDS format. For more information on BIDS,
-you can browse the `BIDS workbook <https://bids-standard.github.io/bids-starter-kit/>` 
+organization and dataset description between different projects. clpipe uses `fMRIprep <https://fmriprep.readthedocs.io/en/stable/>`_ 
+and other other applications that require input data to be in BIDS format. The `project_setup`, `convert2bids`, and `bids_validate`
+commands in the clpipe workflow are convience functions to standardize the directories and files for a given neuroimaging project 
+to BIDS format. For more information on BIDS, you can browse the `BIDS workbook <https://bids-standard.github.io/bids-starter-kit/>`_. 
 
 *****************
 The Command Line Interface
